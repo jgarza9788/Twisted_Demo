@@ -33,18 +33,27 @@ Table of Contents
 	* DemoScript1.cs
 	* Other Scripts 
 2. Shader(s)
-	* Twist(WorldSpace).Shader
+	* Twisted(WorldSpace).Shader
 3. Demo1
-4. Future Stuff
+4. Demo2
+5. How to Use
+6. Known Issues
+
 
 Scripts
 -------------------------------------
-####TwistedChangeCulling.cs  
+**TwistedChangeCulling.cs**  
 Allows you to change the Culling Option on material at Start.  
 To find out more about culling [click here](https://docs.unity3d.com/Manual/SL-CullAndDepth.html).
 
-####DemoScript1.cs
+**DemoScript1.cs**
 Script used in Demo1 to change the settings based on sliders.
+
+**DestoryPorthole.cs**  
+Holds a method to destory the Porthole when done animating. (Used in Demo2)
+
+**GeneratePorthole.cs.cs**  
+Allows the projectile to create a portal on collision. (Used in Demo2)
 
 ####Other Scripts 
 Just other scripts that are in this asset, they most used to make the demo work.
@@ -59,7 +68,7 @@ Just other scripts that are in this asset, they most used to make the demo work.
 
 Shader(s)
 -------------------------------------
-####Twist(WorldSpace).Shader   
+####Twisted(WorldSpace).Shader   
 **Parameters**  
 
 Radius:  
@@ -76,11 +85,13 @@ Changes the distance between each ripple.
 
 Cull:  
 Controls what side(s) of the Quad will render.
-
+ 
 
 Demo1 
 -------------------------------------
 This demo shows how the parameters of the shader effects how it looks, and how to change the parameters values using C#. See DemoScript1.cs for more info.
+
+![Imgur](http://i.imgur.com/VkJTfu7.png)
 
 ~~~cs
 		//update all the settings in the material
@@ -98,14 +109,23 @@ This demo shows how the parameters of the shader effects how it looks, and how t
 		RotateControlScript.speed = RotateSpeedSlider.value;
 ~~~
 
-Future Stuff 
+Demo2 
 -------------------------------------
-* Portal Demo
-	* make a portal using this twisted effect.
-* Animator Demo
- 	* animate this twisted effect using animator. 	  
- 	
-**request more features	**
+This demo displays how this Twisted effect can be used to make porthole like objects. 
+
+![Imgur](http://i.imgur.com/TnEzXAM.png)
+
+How to use
+-------------------------------------
+This is just a GameObject composed of a Quad,a few scripts, and a Shader; Therefore you can use it like a normal GameObject. (ie. drag it in a scene, or Instantiate) 
+
+Please see Demos for example.
+ 
+Known Issues 
+-------------------------------------
+While rendering one twisted effect on top of another the one on the bottom will not render correctly.
+
+![Imgur](http://i.imgur.com/26lcfMc.png)
 
 
 
